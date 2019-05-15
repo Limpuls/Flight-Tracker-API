@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "1a4b848676d31edb74d57a8851cd541a",
@@ -644,6 +644,18 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
+            "version": "v5.8.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "33c04dd2a431adeeb49926a4f2b20590cc033ca2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/33c04dd2a431adeeb49926a4f2b20590cc033ca2",
+                "reference": "33c04dd2a431adeeb49926a4f2b20590cc033ca2",
+=======
             "version": "v5.8.16",
             "source": {
                 "type": "git",
@@ -654,6 +666,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/83d57f9f9162ab476c43b9ec00d463ff12c578fd",
                 "reference": "83d57f9f9162ab476c43b9ec00d463ff12c578fd",
+>>>>>>> 064045e83f0ccf57c8344dc9fa0f0a241ff439c3
                 "shasum": ""
             },
             "require": {
@@ -787,7 +800,11 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
+            "time": "2019-05-14T16:02:41+00:00"
+=======
             "time": "2019-05-07T14:37:11+00:00"
+>>>>>>> 064045e83f0ccf57c8344dc9fa0f0a241ff439c3
         },
         {
             "name": "laravel/tinker",
@@ -3935,6 +3952,18 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
+            "version": "7.5.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "64cb33f5b520da490a7b13149d39b43cf3c890c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/64cb33f5b520da490a7b13149d39b43cf3c890c6",
+                "reference": "64cb33f5b520da490a7b13149d39b43cf3c890c6",
+=======
             "version": "7.5.10",
             "source": {
                 "type": "git",
@@ -3945,6 +3974,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d7d9cee051d03ed98df6023aad93f7902731a780",
                 "reference": "d7d9cee051d03ed98df6023aad93f7902731a780",
+>>>>>>> 064045e83f0ccf57c8344dc9fa0f0a241ff439c3
                 "shasum": ""
             },
             "require": {
@@ -4015,7 +4045,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
+            "time": "2019-05-14T04:53:02+00:00"
+=======
             "time": "2019-05-09T05:06:47+00:00"
+>>>>>>> 064045e83f0ccf57c8344dc9fa0f0a241ff439c3
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
