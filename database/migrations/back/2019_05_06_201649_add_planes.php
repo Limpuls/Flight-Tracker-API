@@ -54,12 +54,13 @@ class AddPlanes extends Migration
 
             $comb = array_combine($headersArray, $line);
             //echo '<pre>', print_r($comb['icao24']), '</pre>';
-            DB::table('planes')->insert(array(
+            /*DB::table('planes')->insert(array(
                 'icao24' => $comb['icao24'],
-                /*'registration' => $comb['registration'],*/
+                'manufacturor_name' => $comb['manufacturername'],
+
                 'created_at' => date('Y-m-d H:m:s'),
                 'updated_at' => date('Y-m-d H:m:s')
-            ));
+            ));*/
 
             DB::table('manufacturer')->insert(array(
                 'name' => $comb['manufacturername'],
@@ -74,11 +75,11 @@ class AddPlanes extends Migration
                 'updated_at' => date('Y-m-d H:m:s')
             ));*/
 
-            DB::table('engine')->insert(array(
+            /*DB::table('engine')->insert(array(
                 'name' => $comb['engines'],
                 'created_at' => date('Y-m-d H:m:s'),
                 'updated_at' => date('Y-m-d H:m:s')
-            ));
+            ));*/
             $i++;
         }
 
