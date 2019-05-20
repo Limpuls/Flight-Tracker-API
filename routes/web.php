@@ -18,4 +18,6 @@ Route::get('/', 'CsvController@store');
 
 Route::get('/csv', 'CsvController@store');
 
+Route::get('/planes/', 'CsvController@getAllPlanes');
+
 Route::get('/planes/{id}', 'CsvController@getPlanes');

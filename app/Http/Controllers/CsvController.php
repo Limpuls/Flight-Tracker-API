@@ -9,8 +9,17 @@ use GuzzleHttp\Client;
 
 class CsvController extends Controller
 {
+
+
     public function store()
     {
+
+        $manuf = DB::table('aircraftDatabase')->where('icao24', 'aa3487')->first();
+        foreach ($manuf as $key=>$value) {
+            echo $key . " " . $value . "\n";
+        }
+
+
         $file_n = Storage::disk('public')->path('aircraftDatabase.csv');
         $file = fopen('https://opensky-network.org/datasets/metadata/aircraftDatabase.csv', 'r');
         $all_data = array();
@@ -66,9 +75,9 @@ class CsvController extends Controller
             $comb = array_combine($headersArray, $line);
             // Look up manuf to see if we already inserted it.
             // Hopefully name isn't duplicated
-            $manuf = DB::table('manufacturer')->where('name', $comb['manufacturername'])->first();
+            //$manuf = DB::table('aircraftDatabase')->where('icao24', 'ff353b')->first();
             // Only insert if it isn't already there
-            if (!$manuf) {
+            /*if (!$manuf) {
                 $manufId = DB::table('manufacturer')->insertGetId(array(
                     'name' => $comb['manufacturername'],
                 ));
@@ -79,10 +88,11 @@ class CsvController extends Controller
             DB::table('planes')->insert(array(
                 'icao24' => $comb['icao24'],
                 'manufacturer_name' => $manufId
-            ));
+            ));*/
 
             $comb = array_combine($headersArray, $line);
-            echo '<pre>', print_r($comb), '</pre>';
+            //echo '<pre>', print_r($comb), '</pre>';
+            //echo '<pre>', print_r($manuf), '</pre>';
             $i++;
         }
 
@@ -93,11 +103,17 @@ class CsvController extends Controller
 
     //$combined = array_combine($headersArray, $array);
 
-
     public function getPlanes($id)
     {
-        $icao24 = DB::table('planes')->where('icao24', $id)->first();
-
+        $manuf = DB::table('aircraftDatabase')->where('icao24', $id)->first();
+        if($manuf) {
+            foreach ($manuf as $key => $value) {
+                echo $key . " " . $value . "\n";
+            }
+        } else {
+            echo "no such plane";
+        }
+        echo "\n";
         /*if ($icao24) {*/
             $client = new Client();
             $res = $client->get('https://opensky-network.org/api/states/all?icao24=' . $id);
@@ -108,6 +124,15 @@ class CsvController extends Controller
         }*/
         //dd($id);
     }
+
+    public function getAllPlanes() {
+        $client = new Client();
+        $res = $client->get('https://opensky-network.org/api/states/all');
+        $json = $res->getBody()->getContents();
+        return $json;
+    }
+
+
 }
 
 
