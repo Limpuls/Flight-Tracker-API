@@ -105,11 +105,12 @@ class CsvController extends Controller
 
     public function getPlanes($id)
     {
-        $manuf = DB::table('aircraftDatabase')->where('icao24', $id)->first();
+        //$manuf = DB::table('aircraftDatabase')->where('icao24', $id)->first();
+        $manuf = DB::select('call getPlanes(?)',array($id));
         if($manuf) {
-            foreach ($manuf as $key => $value) {
-                echo $key . " " . $value . "\n";
-            }
+            //print_r(json_encode($manuf));
+            $manufJson = json_encode($manuf);
+            return $manufJson;
         } else {
             echo "no such plane";
         }
