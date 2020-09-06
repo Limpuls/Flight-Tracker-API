@@ -8,3 +8,5 @@
 </p>
 
 ## Flight Tracker API written in Laravel providing public aircraft dataset for Flight Tracker Client.
+
+### Demo http://api.laimispetravici.us/planes
